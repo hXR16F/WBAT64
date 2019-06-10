@@ -1,6 +1,9 @@
 @echo off
 color 1f
 
+if not exist "wbat/WINDOWS/SYSTEM.INI" echo.|set /p ".=" > "wbat/WINDOWS/SYSTEM.INI"
+if not exist "wbat/WINDOWS/WIN.INI" echo.|set /p ".=" > "wbat/WINDOWS/WIN.INI"
+
 :main
 	cls
 	(echo.&echo  Press any key to display message...) & pause >nul
