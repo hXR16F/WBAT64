@@ -31,4 +31,4 @@ Example:
     
 # WBAT settings
 To edit colors, styles and other options edit **WBAT.INI** file.
-For all documentation see **DEMO.BAT** after downloading WBAT.
+For all documentation see **DEMO.BAT** after downloading [WBAT](https://www.horstmuc.de/ui.htm).
