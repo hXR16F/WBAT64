@@ -29,6 +29,9 @@ Example:
 
     otvdm.exe --app-name WBAT.COM wbat cls ! box (black on white) :asd
     
+If it's not working, try installing:
+> OTVDM/wbat/install.reg
+
 # WBAT settings
 To edit colors, styles and other options edit **WBAT.INI** file.
 For all documentation see **DEMO.BAT** after downloading [WBAT](https://www.horstmuc.de/ui.htm).
