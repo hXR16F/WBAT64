@@ -1,0 +1,33 @@
+:main_menu "Main menu" [x]
+ [ &Tour    ]  Take the tour
+ [ &Setup   ]  Preferences
+ [ &Report  ]  Make a report
+ [? E&xit   ]
+:
+
+:signup "New user" [x]
+
+ Please enter your name and city ^
+
+ Name: [$ name,40              ]
+ City: [$ city                 ]
+
+ [.] male  [.] female
+
+ [!] over 21     [!] send newsletter
+
+        [    OK    ] [? cancel ]
+:
+
+:autoclose "Timer"
+
+   This box will close in #? seconds.
+   Press any key to stop the countdown.
+
+         [  ok  ] [  cancel  ]
+:
+
+:info
+#  About  ^
+wbat64 ~0.1~ running for %USERNAME%
+:

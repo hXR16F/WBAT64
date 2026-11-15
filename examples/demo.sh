@@ -6,7 +6,7 @@ set -eu
 here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 wbat64=${WBAT64_EXE:-wbat64}
 
-out=$("$wbat64" box "@$here/dialogs.txt:signup" --emit sh)
+out=$("$wbat64" box "@$here/WBAT.TXT:signup" --emit sh)
 rc=$?
 if [ "$rc" -ge 100 ]; then
     echo "cancelled"

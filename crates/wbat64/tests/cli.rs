@@ -63,6 +63,27 @@ fn default_source_file_from_ini() {
 }
 
 #[test]
+fn builtin_default_source_file_is_wbat_txt() {
+    let dir = std::env::temp_dir().join(format!("wbat64-default-source-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&dir);
+    std::fs::create_dir_all(&dir).unwrap();
+    let output = Command::new(env!("CARGO_BIN_EXE_wbat64"))
+        .current_dir(&dir)
+        .env("APPDATA", &dir)
+        .env("HOME", &dir)
+        .env("XDG_CONFIG_HOME", &dir)
+        .args(["box", ":one_button", "--keys", "enter"])
+        .output()
+        .expect("wbat64 runs");
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    assert_eq!(output.status.code(), Some(255), "{stderr}");
+    assert!(stderr.contains("WBAT.TXT"), "{stderr}");
+    assert!(stderr.contains("SourceFile"), "{stderr}");
+    assert!(!stderr.contains("dialogs.txt"), "{stderr}");
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
 fn whole_command_as_one_quoted_argument() {
     // This is what `call w.bat "box ..."` passes through.
     let run = wbat64(&["box @dialogs.txt:one_button --keys enter --emit json"]);

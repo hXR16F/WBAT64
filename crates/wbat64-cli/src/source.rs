@@ -147,8 +147,13 @@ pub fn resolve_path(
         .map(|p| p.display().to_string())
         .collect::<Vec<_>>()
         .join(", ");
+    let origin = if reference.path.is_empty() {
+        " (from SourceFile in WBAT.INI or wbat64.toml)"
+    } else {
+        ""
+    };
     Err(Error::msg(format!(
-        "cannot open layout file '{raw}' (tried {tried})"
+        "cannot open layout file '{raw}'{origin} (tried {tried})"
     )))
 }
 

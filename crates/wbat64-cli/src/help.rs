@@ -88,7 +88,7 @@ MOUSE
 EXAMPLES
   wbat64 box ok
   wbat64 box 19,55 (blue on +brown) "Continue?^Existing files are replaced." &yes,&no,cancel
-  wbat64 box @dialogs.txt:signup --emit bat > vars.bat
+  wbat64 box @WBAT.TXT:signup --emit bat > vars.bat
   wbat64 list - --emit json < files.txt
-  wbat64 cls --and text 2,4 @dialogs.txt:info --and box ok
+  wbat64 cls --and text 2,4 @WBAT.TXT:info --and box ok
 "#;

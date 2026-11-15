@@ -735,6 +735,7 @@ bar = "+white on #b00020"
     #[test]
     fn compat_defaults_match_wbat_ini() {
         let c = Config::compat_defaults();
+        assert_eq!(c.source_file, "WBAT.TXT");
         assert_eq!(c.frame, Frame::blank());
         assert_eq!(
             c.theme.title,

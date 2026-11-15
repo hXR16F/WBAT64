@@ -8,7 +8,7 @@ mouse = true
 escape_discards = true
 el_var = true
 error_pause = true
-source_file = "dialogs.txt"
+source_file = "WBAT.TXT"
 pal_file = "+PAL.INI"
 encoding = "auto"          # utf8 | cp437 | cp850 | oem | auto
 max_width = 0              # 0 = use the terminal width

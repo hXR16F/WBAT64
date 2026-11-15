@@ -1,7 +1,7 @@
 # A short tour of wbat64 from PowerShell.
 # The UI is drawn on the console, so the pipeline only captures the result lines.
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$dialogs = Join-Path $here 'dialogs.txt'
+$dialogs = Join-Path $here 'WBAT.TXT'
 
 $out = & wbat64 box "@$($dialogs):signup" --emit ps1
 $rc = $LASTEXITCODE

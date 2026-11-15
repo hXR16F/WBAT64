@@ -9,7 +9,7 @@
 use wbat64::{Dialog, Layout, Outcome};
 
 fn main() -> wbat64::Result<()> {
-    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../../examples/dialogs.txt");
+    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/../../examples/WBAT.TXT");
     let layout = Layout::from_file(path, "signup")?;
     let result = Dialog::new(layout)
         .var("city", "Berlin")

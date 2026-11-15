@@ -2,7 +2,7 @@
 
 Run these from `cmd.exe` (double-clicking works too). Every script calls
 `..\_env.bat`, which prefers `..\..\bin\wbat64.exe` and otherwise uses `wbat64` from
-`PATH`, and points at `..\dialogs.txt` and `..\..\w.bat`.
+`PATH`, and points at `..\WBAT.TXT` and `..\..\w.bat`.
 
 `w.bat` writes its temporary result file to `WBAT64_TMP`, the current directory,
 the script directory, or `%TEMP%` — whichever wbat64 can actually write. Set

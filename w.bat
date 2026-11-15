@@ -1,6 +1,6 @@
 @echo off
 rem w.bat - run WBAT64 and import the resulting variables into this batch file.
-rem Usage:  call w.bat box @dialogs.txt:signup
+rem Usage:  call w.bat box @WBAT.TXT:signup
 rem Set WBAT64_EXE if the executable is not on PATH; set WBAT64_TMP to force the
 rem directory used for the temporary result file.
 rem No setlocal on purpose: the variables written by WBAT64 must reach the caller.
