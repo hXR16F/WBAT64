@@ -32,10 +32,7 @@ cargo build --release
 ```
 
 On Windows you can run `build.bat` instead, which builds the workspace and
-copies the result to `bin\wbat64.exe`.
-
-Then copy `wbat64` (`wbat64.exe` on Windows) somewhere on your `PATH`. For use
-from batch files, copy `w.bat` next to it.
+copies the results to `bin`.
 
 ## Usage in batch files
 
