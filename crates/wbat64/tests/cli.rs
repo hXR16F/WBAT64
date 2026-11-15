@@ -77,7 +77,7 @@ fn builtin_default_source_file_is_wbat_txt() {
         .expect("wbat64 runs");
     let stderr = String::from_utf8_lossy(&output.stderr);
     assert_eq!(output.status.code(), Some(255), "{stderr}");
-    assert!(stderr.contains("WBAT.TXT"), "{stderr}");
+    assert!(stderr.contains("wbat.txt"), "{stderr}");
     assert!(stderr.contains("SourceFile"), "{stderr}");
     assert!(!stderr.contains("dialogs.txt"), "{stderr}");
     let _ = std::fs::remove_dir_all(&dir);

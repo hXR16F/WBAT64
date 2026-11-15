@@ -1,6 +1,6 @@
 //! Configuration: WBAT-compatible INI, native TOML, and environment overrides.
 //!
-//! Precedence (lowest to highest): built-in defaults, `WBAT.INI`, `wbat64.toml`,
+//! Precedence (lowest to highest): built-in defaults, `wbat.ini`, `wbat64.toml`,
 //! per-key environment overrides (`W` + key), command line. Building a config
 //! is pure: the CLI reads the files and hands the text in.
 
@@ -267,8 +267,8 @@ impl Config {
             right_esc: true,
             keep_input_on_esc: false,
             error_pause: true,
-            source_file: "WBAT.TXT".to_string(),
-            pal_file: "+PAL.INI".to_string(),
+            source_file: "wbat.txt".to_string(),
+            pal_file: "+pal.ini".to_string(),
             list_hot_ticks: 10,
             encoding: Encoding::Oem,
             max_width: Some(78),
@@ -288,7 +288,7 @@ impl Config {
             compat: false,
             encoding: Encoding::Auto,
             max_width: None,
-            source_file: "WBAT.TXT".to_string(),
+            source_file: "wbat.txt".to_string(),
             ..Config::compat_defaults()
         }
     }
@@ -330,7 +330,7 @@ impl Config {
         }
     }
 
-    /// Apply a WBAT.INI document.
+    /// Apply a wbat.ini document.
     pub fn apply_ini(&mut self, text: &str, warnings: &mut Vec<String>) {
         let ini = Ini::parse(text);
         let general = |key: &str| ini.get("general", key).or_else(|| ini.get_any(key));
@@ -628,7 +628,7 @@ pub fn parse_symbol(value: &str) -> Option<char> {
 pub struct LoadOptions {
     /// Compat mode: `wbat`-style defaults, INI only.
     pub compat: bool,
-    /// Native mode also reads `WBAT.INI` after the TOML file (section 6.3).
+    /// Native mode also reads `wbat.ini` after the TOML file (section 6.3).
     pub read_ini_in_native: bool,
 }
 
@@ -735,7 +735,7 @@ bar = "+white on #b00020"
     #[test]
     fn compat_defaults_match_wbat_ini() {
         let c = Config::compat_defaults();
-        assert_eq!(c.source_file, "WBAT.TXT");
+        assert_eq!(c.source_file, "wbat.txt");
         assert_eq!(c.frame, Frame::blank());
         assert_eq!(
             c.theme.title,

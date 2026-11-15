@@ -1,6 +1,6 @@
 //! A small WBAT-compatible INI reader.
 //!
-//! The original `WBAT.INI` puts a frame pattern in quotes that itself contains
+//! The original `wbat.ini` puts a frame pattern in quotes that itself contains
 //! semicolons and spaces, so a naive "strip everything after `;`" breaks it.
 //! This reader is quote-aware: `;` starts a comment only outside quotes, and a
 //! fully quoted value is unquoted.
@@ -119,7 +119,7 @@ ELvar=1              ; set ? = exit code
 rightESC=1           ; right-click outside = ESC
 BoxFrame="┌─┐│ │└─┘"
 CheckSymbol="x"      ; or a decimal code
-SourceFile=WBAT.TXT
+SourceFile=wbat.txt
 [color]
 Screen=   black on +green
 Box=      black on +white
@@ -132,7 +132,7 @@ Shadow=   +black     ; NONE = off
         let ini = Ini::parse(SAMPLE);
         assert_eq!(ini.get("general", "ELvar"), Some("1"));
         assert_eq!(ini.get("GENERAL", "rightesc"), Some("1"));
-        assert_eq!(ini.get("general", "SourceFile"), Some("WBAT.TXT"));
+        assert_eq!(ini.get("general", "SourceFile"), Some("wbat.txt"));
         assert_eq!(ini.get("color", "Screen"), Some("black on +green"));
         assert_eq!(ini.get("color", "Box"), Some("black on +white"));
     }

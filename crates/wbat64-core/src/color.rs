@@ -300,7 +300,7 @@ pub fn parse_foreground(s: &str) -> Result<Color> {
     Ok(parse_colors(s)?.fg)
 }
 
-/// The palette order used by `PAL.INI` (DOS order).
+/// The palette order used by `pal.ini` (DOS order).
 pub const DOS_PALETTE_NAMES: [&str; 8] = [
     "black", "blue", "green", "cyan", "red", "magenta", "brown", "white",
 ];

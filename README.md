@@ -15,7 +15,7 @@ wbat64 box 19,55 (blue on +brown) "Continue?^Existing files will be replaced." &
 
 - **One static executable**, no runtime dependencies
 - **Cross-platform:** Windows (conhost and Windows Terminal), Linux, macOS
-- **WBAT-compatible:** layouts, quick boxes, `WBAT.INI` and exit codes all work as before
+- **WBAT-compatible:** layouts, quick boxes, `wbat.ini` and exit codes all work as before
 - **Modern extras:** Unicode, truecolor, JSON output, stdin lists, mouse support, resize handling
 - **Clean output:** the UI is drawn on the console device, never on stdout, so results stay capturable
 
@@ -44,7 +44,7 @@ the resulting variables into your script:
 
 ```bat
 @echo off
-call w.bat box @dialogs.txt:signup
+call w.bat box @wbat.txt:signup
 if errorlevel 100 exit /b 1
 echo Hello %name% from %city%
 ```
@@ -57,7 +57,7 @@ yourself:
 
 ```bat
 wbat64 box ok > results.bat
-wbat64 box @dialogs.txt:signup --emit bat > vars.bat
+wbat64 box @wbat.txt:signup --emit bat > vars.bat
 ```
 
 <details>
@@ -106,7 +106,7 @@ software or an indexer is holding the file.
 | `stdout` | `stdout @file[:label]` | Write a unit to stdout with variables expanded |
 | `el` | `el n` | Set the exit code |
 | `ansi?` | `ansi?` | Exit 0 if the console supports VT |
-| `pal` | `pal [file]` | Apply a 16-color DOS palette (`PAL.INI`) |
+| `pal` | `pal [file]` | Apply a 16-color DOS palette (`pal.ini`) |
 | `font` | `font [25\|33]` | Bitmap fonts are unsupported; warns and exits 0 |
 | `check` | `check [@file[:label]]` | Validate layouts, with line/column errors |
 | `version`, `help` | | |
@@ -114,7 +114,7 @@ software or an indexer is holding the file.
 Chain commands with `!` or `--and`. A `box`, `menu` or `list` must come last:
 
 ```bat
-wbat64 cls --and text 2,4 @dialogs.txt:info --and box ok
+wbat64 cls --and text 2,4 @wbat.txt:info --and box ok
 ```
 
 Positions are 1-based `line,column`. Boxes are centered unless positioned;
@@ -147,8 +147,8 @@ really red, even though DOS lists red as index 4.
 ### Preselect and countdown
 
 ```bat
-wbat64 box @dialogs.txt:autoclose #1,15
-wbat64 menu @dialogs.txt:main_menu #%mpos%+1
+wbat64 box @wbat.txt:autoclose #1,15
+wbat64 menu @wbat.txt:main_menu #%mpos%+1
 ```
 
 - `#n` preselects button `n`. A value of 0 or an invalid one selects the first button.
@@ -249,7 +249,7 @@ shell values are single-quoted, with the usual doubling / `'\''` rules.
 ### JSON
 
 ```
-> wbat64 box @dialogs.txt:signup --emit json
+> wbat64 box @wbat.txt:signup --emit json
 {"button":{"index":1,"name":"OK"},"checkboxes":[1,0],"escaped":false,
  "exit_code":1,"inputs":{"city":"London","name":"Ada"},"radio":2}
 
@@ -278,7 +278,7 @@ the `Bar` color), and clicking activates it.
 
 ## Configuration
 
-### `WBAT.INI` (compat mode)
+### `wbat.ini` (compat mode)
 
 Searched in the current directory, then the executable directory.
 
@@ -292,8 +292,8 @@ BoxFrame="         " ; nine spaces = blank frame (1-char margin)
 CheckSymbol="x"
 RadioSymbol="*"
 HiSymbol="~"
-SourceFile=WBAT.TXT
-PalFile=+PAL.INI
+SourceFile=wbat.txt
+PalFile=+pal.ini
 [color]
 Screen=black on +green
 Box=black on +white
@@ -343,7 +343,7 @@ Set `NO_COLOR` (or pass `--no-color`) for a monochrome theme.
 use wbat64::{Dialog, Layout, Outcome};
 
 fn main() -> wbat64::Result<()> {
-    let layout = Layout::from_file("examples/dialogs.txt", "signup")?;
+    let layout = Layout::from_file("examples/wbat.txt", "signup")?;
     let res = Dialog::new(layout)
         .var("city", "Berlin")
         .timeout(std::time::Duration::from_secs(60))
@@ -407,7 +407,7 @@ run these from a terminal:
 cargo run -p wbat64-tui --example console_probe
 
 # Draw a box with `fix`, then dump the real console window
-wbat64 fix box 2,4 @examples/dialogs.txt:signup --timeout 1
+wbat64 fix box 2,4 @examples/wbat.txt:signup --timeout 1
 cargo run -p wbat64-tui --example console_dump
 
 # Quick end-to-end check of the release binary

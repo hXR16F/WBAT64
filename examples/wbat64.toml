@@ -8,8 +8,8 @@ mouse = true
 escape_discards = true
 el_var = true
 error_pause = true
-source_file = "WBAT.TXT"
-pal_file = "+PAL.INI"
+source_file = "wbat.txt"
+pal_file = "+pal.ini"
 encoding = "auto"          # utf8 | cp437 | cp850 | oem | auto
 max_width = 0              # 0 = use the terminal width
 list_hot_ticks = 10

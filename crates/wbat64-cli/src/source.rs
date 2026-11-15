@@ -148,7 +148,7 @@ pub fn resolve_path(
         .collect::<Vec<_>>()
         .join(", ");
     let origin = if reference.path.is_empty() {
-        " (from SourceFile in WBAT.INI or wbat64.toml)"
+        " (from SourceFile in wbat.ini or wbat64.toml)"
     } else {
         ""
     };

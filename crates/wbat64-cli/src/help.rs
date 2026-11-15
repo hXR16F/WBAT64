@@ -24,7 +24,7 @@ COMMANDS
   stdout @file[:label]                write the unit to stdout, variables expanded
   el n                                set the exit code (0..255)
   ansi?                               exit 0 when the console supports VT output
-  pal [file]                          apply a 16-colour DOS palette (PAL.INI)
+  pal [file]                          apply a 16-colour DOS palette (pal.ini)
   font [25|33]                        not supported; warns and exits 0
   check [@file[:label]]               validate layouts, print line/column errors
   version, help                       this text
@@ -88,7 +88,7 @@ MOUSE
 EXAMPLES
   wbat64 box ok
   wbat64 box 19,55 (blue on +brown) "Continue?^Existing files are replaced." &yes,&no,cancel
-  wbat64 box @WBAT.TXT:signup --emit bat > vars.bat
+  wbat64 box @wbat.txt:signup --emit bat > vars.bat
   wbat64 list - --emit json < files.txt
-  wbat64 cls --and text 2,4 @WBAT.TXT:info --and box ok
+  wbat64 cls --and text 2,4 @wbat.txt:info --and box ok
 "#;

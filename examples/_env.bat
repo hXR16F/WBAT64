@@ -11,5 +11,5 @@ if defined WBAT64_EXE goto :wbat64_env_done
 where wbat64 >nul 2>&1
 if not errorlevel 1 set "WBAT64_EXE=wbat64"
 :wbat64_env_done
-set "DIALOGS=%~dp0WBAT.TXT"
+set "DIALOGS=%~dp0wbat.txt"
 set "SHIM=%~dp0..\w.bat"

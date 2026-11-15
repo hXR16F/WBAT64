@@ -119,7 +119,7 @@ fn read_optional(path: &std::path::Path) -> Option<String> {
         .map(|bytes| wbat64_core::encoding::decode(&bytes, Encoding::Auto))
 }
 
-/// Locate `WBAT.INI`: current directory first, then the executable directory.
+/// Locate `wbat.ini`: current directory first, then the executable directory.
 fn find_ini(cwd: &std::path::Path, exe_dir: Option<&std::path::Path>) -> Option<PathBuf> {
     let mut candidates = vec![cwd.join("WBAT.INI")];
     if let Some(dir) = exe_dir {
