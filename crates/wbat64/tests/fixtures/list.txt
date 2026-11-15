@@ -1,0 +1,4 @@
+﻿report.txt
+notes.md
+photo.jpg
+setup.exe

@@ -1,0 +1,28 @@
+:required "Required" [x]
+ Name: [$ name,20,! ]
+ [ OK ] [? cancel ]
+:
+
+:flags "Flags" [x]
+ Upper: [$ upper,10,U ]
+ Pass:  [$ secret,10,P ]
+ [ OK ]
+:
+
+:hostile "Hostile" [x]
+ Value: [$ value,30 ]
+ [ OK ]
+:
+
+:wide
+This box is intentionally very wide so that compat mode has to reject it: 0123456789 0123456789 0123456789
+ [ OK ]
+:
+
+:single_input "One field"
+ [$ only,20 ]
+:
+
+:fixed "Fixed box"
+ [ close ]
+:

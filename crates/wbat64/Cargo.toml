@@ -1,0 +1,25 @@
+[package]
+name = "wbat64"
+description = "Dialog boxes, menus and lists for batch files and shell scripts"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[lib]
+name = "wbat64"
+path = "src/lib.rs"
+
+[[bin]]
+name = "wbat64"
+path = "src/main.rs"
+
+[dependencies]
+wbat64-core.workspace = true
+wbat64-render.workspace = true
+wbat64-tui.workspace = true
+wbat64-cli.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true

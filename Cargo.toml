@@ -1,0 +1,33 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/wbat64-core",
+    "crates/wbat64-render",
+    "crates/wbat64-tui",
+    "crates/wbat64-cli",
+    "crates/wbat64",
+]
+default-members = ["crates/wbat64"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "MIT"
+authors = ["zaktabyte"]
+
+[workspace.dependencies]
+wbat64-core = { path = "crates/wbat64-core", version = "0.1.0" }
+wbat64-render = { path = "crates/wbat64-render", version = "0.1.0" }
+wbat64-tui = { path = "crates/wbat64-tui", version = "0.1.0" }
+wbat64-cli = { path = "crates/wbat64-cli", version = "0.1.0" }
+
+unicode-width = "0.2"
+serde_json = "1"
+crossterm = "0.29"
+libc = "0.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

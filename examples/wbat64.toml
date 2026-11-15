@@ -1,0 +1,34 @@
+# wbat64.toml - native configuration (WBAT 2.50 defaults shown).
+# Search order: ./wbat64.toml, %APPDATA%\wbat64\wbat64.toml (Windows),
+#               ~/.config/wbat64/wbat64.toml (Unix), or --config PATH.
+
+[general]
+frame = "none"             # none/blank | ascii | single | double | rounded | 9-char pattern
+mouse = true
+escape_discards = true
+el_var = true
+error_pause = true
+source_file = "dialogs.txt"
+pal_file = "+PAL.INI"
+encoding = "auto"          # utf8 | cp437 | cp850 | oem | auto
+max_width = 0              # 0 = use the terminal width
+list_hot_ticks = 10
+check_symbol = "x"
+radio_symbol = "*"
+hi_symbol = "~"
+
+[colors]
+screen = "black on +green"
+box = "black on +white"
+box_hi = "red on +white"
+text_hi = "red on +green"
+text_title = "+white on magenta"
+bar = "+white on +red"
+button = "black on white"
+hotkey = "red"
+shadow = "+black"
+divider = "cyan"
+title = "black on +blue"
+input = "black on +white"
+text = "black on +white"
+list = "black on +white"

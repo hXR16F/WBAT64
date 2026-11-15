@@ -1,0 +1,12 @@
+[package]
+name = "wbat64-render"
+description = "wbat64 cell buffer, frame/shadow painters and ANSI output"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+wbat64-core.workspace = true
+unicode-width.workspace = true

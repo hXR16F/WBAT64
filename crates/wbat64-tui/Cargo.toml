@@ -1,0 +1,17 @@
+[package]
+name = "wbat64-tui"
+description = "wbat64 interactive terminal backend and dialogs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+wbat64-core.workspace = true
+wbat64-render.workspace = true
+crossterm.workspace = true
+unicode-width.workspace = true
+
+[target.'cfg(unix)'.dependencies]
+libc.workspace = true

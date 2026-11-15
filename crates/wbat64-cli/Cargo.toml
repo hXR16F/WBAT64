@@ -1,0 +1,16 @@
+[package]
+name = "wbat64-cli"
+description = "wbat64 command line parser, dispatch and result emitters"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+wbat64-core.workspace = true
+wbat64-render.workspace = true
+wbat64-tui.workspace = true
+
+[target.'cfg(unix)'.dependencies]
+libc.workspace = true
