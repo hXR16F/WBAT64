@@ -3,7 +3,7 @@
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $dialogs = Join-Path $here 'WBAT.TXT'
 
-$out = & wbat64 box "@$($dialogs):signup" --emit ps1
+$out = & ./wbat64.exe box "@$($dialogs):signup" --emit ps1
 $rc = $LASTEXITCODE
 if ($rc -ge 100) {
     Write-Host 'cancelled'
