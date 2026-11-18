@@ -7,9 +7,7 @@ WBAT64 draws a pop-up on the terminal, runs a small interaction, and hands the
 result back as an exit code and as shell variables. It ships as a single
 executable plus a Rust library built on the same engine.
 
-```bat
-wbat64 box 19,55 (blue on +brown) "Continue?^Existing files will be replaced." &yes,&no,cancel
-```
+![showcase.png](https://raw.githubusercontent.com/hXR16F/WBAT64/refs/heads/master/docs/showcase.png)
 
 ## Features
 
